@@ -1,0 +1,51 @@
+sudo apt-get install nodejs
+sudo apt install nodejs-legacy
+sudo apt install npm
+sudo npm config set registry https://registry.npm.taobao.org
+sudo npm install n -g
+sudo n stable
+sudo npm install -g hexo-cli
+hexo init
+npm install hexo-generator-index --save
+npm install hexo-generator-archive --save
+npm install hexo-generator-category --save
+npm install hexo-generator-tag --save
+npm install hexo-server --save
+npm install hexo-deployer-git --save
+npm install hexo-deployer-heroku --save
+npm install hexo-deployer-rsync --save
+npm install hexo-deployer-openshift --save
+npm install hexo-renderer-marked --save
+npm install hexo-renderer-stylus --save
+npm install hexo-generator-feed --save
+npm install hexo-generator-sitemap --save
+hexo server
+
+autumn主题
+
+hexo new "新的文章"
+hexo g 生成新的静态文件
+hexo  d 发布到GitHub
+
+hexo new file   #在source/_post下面新建一个file.md文件
+hexo generate   #由md文件生成html静态文件
+hexo server     #在本地启动http服务以提供本地预览功能
+hexo render <file> -o <ouput> #渲染指定的md，输出为html格式
+hexo clean      #清除db.json与public里面的内容
+hexo list <type> #列出指定信息，比如tag，post等等
+
+删除文章的过程一样也很简单，先删除本地文件，然后通过生成和部署命令进而将远程仓库中的文件也一并删除。具体来说，以最开始默认形成的helloworld.md这篇文章为例。
+
+首先进入到source / _post 文件夹中，找到helloworld.md文件，在本地直接执行删除。然后依次执行hexo g，hexo d，再去主页查看你就会发现你的博客上面已经空空如也了，这就是如何删除文章的方法。
+
+
+
+
+1、cd到博客根目录下 查看_config.yml文件 查找 post_asset_folder 字段确定post_asset_folder 设置为true -> post_asset_folder:true
+
+2、当您设置 post_asset_folder 参数后，在建立文件时，Hexo 会自动建立一个与文章同名的文件夹，您可以把与该文章相关的所有资源都放到此文件夹内，这样就可以更方便的使用资源。
+
+3、到博客的根目录下执行 npm install https://github.com/CodeFalling/hexo-asset-image --save 命来进行插件的安装。
+
+4、然后创建一文章 hexo new "test" 然后查看博客的 ../source/_posts 目录下的文件，会看到存在一个test 文件夹 和 test.md 文件
+
