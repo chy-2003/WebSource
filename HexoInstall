@@ -19,6 +19,7 @@ npm install hexo-renderer-marked --save
 npm install hexo-renderer-stylus --save
 npm install hexo-generator-feed --save
 npm install hexo-generator-sitemap --save
+npm install hexo-generator-archive --save
 hexo server
 
 autumn主题
